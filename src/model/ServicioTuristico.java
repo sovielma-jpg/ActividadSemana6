@@ -1,37 +1,31 @@
 package model;
 
-public class ServicioTuristico {
-
+public abstract class ServicioTuristico {
     private String nombre;
-    private double duracionHoras;
+    private double precio;
 
-    public ServicioTuristico(String nombre, double duracionHoras) {
+    public ServicioTuristico(String nombre, double precio) {
         this.nombre = nombre;
-        this.duracionHoras = duracionHoras;
+        this.precio = precio;
     }
 
-    // GETTERS
+    // Getters y Setters
     public String getNombre() {
         return nombre;
     }
 
-    public double getDuracionHoras() {
-        return duracionHoras;
-    }
-
-    // SETTERS
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public void setDuracionHoras(double duracionHoras) {
-        this.duracionHoras = duracionHoras;
+    public double getPrecio() {
+        return precio;
     }
 
-    @Override
-    public String toString() {
-        return "Nombre del servicio : " + nombre + "\n" +
-                "Duración estimada   : " + duracionHoras + " horas";
-
+    public void setPrecio(double precio) {
+        this.precio = precio;
     }
+
+    // Método polimórfico
+    public abstract void mostrarInformacion();
 }

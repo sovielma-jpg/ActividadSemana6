@@ -1,55 +1,26 @@
 package data;
 
-import model.RutaGastronomica;
-import model.PaseoLacustre;
-import model.ExcursionCultural;
+import model.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class GestorServicios {
+    private List<ServicioTuristico> servicios;
 
-    public void mostrarServiciosDePrueba() {
+    public GestorServicios() {
+        servicios = new ArrayList<>();
+        cargarServicios();
+    }
 
-        RutaGastronomica ruta1 = new RutaGastronomica(
-                "Paladar Lago Llanquihue",
-                5.3,
-                5
-        );
+    private void cargarServicios() {
+        servicios.add(new RutaGastronomica("Paladar del sur", 22320, "Pastel de Choclo"));
+        servicios.add(new PaseoLacustre("Viajando por Llanquihue", 50000, "Lago Llanquihue"));
+        servicios.add(new ExcursionCultural("Los Mapuches y su origen", 24500, "museo"));
+        servicios.add(new RutaGastronomica("Delicias de LLanquihue", 28340, "Cordero asado con navegado"));
+        servicios.add(new PaseoLacustre("Aventura en Jeep", 35000, "Lago Chile"));
+    }
 
-        RutaGastronomica ruta2 = new RutaGastronomica(
-                "Paseo del Queso y la Cerveza nacional",
-                5.0,
-                3
-        );
-
-        PaseoLacustre paseo1 = new PaseoLacustre(
-                "Viaje por Lago Llanquihue",
-                2.0,
-                "Buque"
-        );
-
-        PaseoLacustre paseo2 = new PaseoLacustre(
-                "Paseo por el Volcán Osorno",
-                4.4,
-                "Lancha"
-        );
-
-        ExcursionCultural excursion1 = new ExcursionCultural(
-                "Historia Alemana en Frutillar",
-                2.5,
-                "Museo Colonial Alemán"
-        );
-
-        ExcursionCultural excursion2 = new ExcursionCultural(
-                "Patrimonio cultural por Puerto Varas",
-                1.0,
-                "Iglesia del Sagrado Corazón de Jesús"
-        );
-
-        System.out.println(ruta1 + "\n");
-        System.out.println(ruta2 + "\n");
-        System.out.println(paseo1 + "\n");
-        System.out.println(paseo2 + "\n");
-        System.out.println(excursion1 + "\n");
-        System.out.println(excursion2 + "\n");
+    public List<ServicioTuristico> getServicios() {
+        return servicios;
     }
 }
-

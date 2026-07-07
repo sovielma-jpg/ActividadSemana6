@@ -1,34 +1,26 @@
 package model;
 
 public class ExcursionCultural extends ServicioTuristico {
+    private String museo;
 
-    private String lugarHistorico;
-
-    public ExcursionCultural(String nombre, double duracionHoras, String lugarHistorico) {
-        super(nombre, duracionHoras);
-        this.lugarHistorico = lugarHistorico;
+    public ExcursionCultural(String nombre, double precio, String museo) {
+        super(nombre, precio);
+        this.museo = museo;
     }
 
-    // GETTER
-    public String getLugarHistorico() {
-        return lugarHistorico;
+    // Getter y Setter
+    public String getMuseo() {
+        return museo;
     }
 
-    // SETTER
-    public void setLugarHistorico(String lugarHistorico) {
-        this.lugarHistorico = lugarHistorico;
+    public void setMuseo(String museo) {
+        this.museo = museo;
     }
 
     @Override
-    public String toString() {
-        return "--------------------------------------\n" +
-                " Categoría: Excursión Cultural\n" +
-                "--------------------------------------\n" +
-                "Nombre del servicio : " + getNombre() + "\n" +
-                "Duración estimada   : " + getDuracionHoras() + " horas\n" +
-                "Lugar histórico 	: " + lugarHistorico + "\n" +
-                "Descripción     	: Actividad orientada al conocimiento patrimonial e histórico.\n" +
-                "--------------------------------------";
+    public void mostrarInformacion() {
+        System.out.println("🏛 Excursión Cultural: " + getNombre() +
+                " | Precio: $" + getPrecio() +
+                " | Museo: " + museo);
     }
 }
-

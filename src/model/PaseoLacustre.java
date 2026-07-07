@@ -1,35 +1,26 @@
 package model;
 
 public class PaseoLacustre extends ServicioTuristico {
+    private String lago;
 
-    private String tipoEmbarcacion;
-
-    public PaseoLacustre(String nombre, double duracionHoras, String tipoEmbarcacion) {
-        super(nombre, duracionHoras);
-        this.tipoEmbarcacion = tipoEmbarcacion;
+    public PaseoLacustre(String nombre, double precio, String lago) {
+        super(nombre, precio);
+        this.lago = lago;
     }
 
-    // GETTER
-    public String getTipoEmbarcacion() {
-        return tipoEmbarcacion;
+    public String getLago() {
+        return lago;
     }
 
-    // SETTER
-    public void setTipoEmbarcacion(String tipoEmbarcacion) {
-        this.tipoEmbarcacion = tipoEmbarcacion;
+    public void setLago(String lago) {
+        this.lago = lago;
     }
 
     @Override
-    public String toString() {
-        return "--------------------------------------\n" +
-                " Categoría: Paseo Lacustre\n" +
-                "--------------------------------------\n" +
-                "Nombre del servicio : " + getNombre() + "\n" +
-                "Duración estimada   : " + getDuracionHoras() + " horas\n" +
-                "Tipo de embarcación : " + tipoEmbarcacion + "\n" +
-                "Descripción     	: Paseo turístico por el lago con vista panorámica.\n" +
-                "--------------------------------------";
-
+    public void mostrarInformacion() {
+        System.out.println("🚤 Paseo Lacustre: " + getNombre() +
+                " | Precio: $" + getPrecio() +
+                " | Lago: " + lago);
     }
 }
 

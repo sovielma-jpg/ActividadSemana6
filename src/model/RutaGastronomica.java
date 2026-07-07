@@ -1,34 +1,26 @@
 package model;
 
 public class RutaGastronomica extends ServicioTuristico {
+    private String especialidad;
 
-    private int numeroDeParadas;
-
-    public RutaGastronomica(String nombre, double duracionHoras, int numeroDeParadas) {
-        super(nombre, duracionHoras);
-        this.numeroDeParadas = numeroDeParadas;
+    public RutaGastronomica(String nombre, double precio, String especialidad) {
+        super(nombre, precio);
+        this.especialidad = especialidad;
     }
 
-    // GETTER
-    public int getNumeroDeParadas() {
-        return numeroDeParadas;
+    // Getter y Setter
+    public String getEspecialidad() {
+        return especialidad;
     }
 
-    // SETTER
-    public void setNumeroDeParadas(int numeroDeParadas) {
-        this.numeroDeParadas = numeroDeParadas;
+    public void setEspecialidad(String especialidad) {
+        this.especialidad = especialidad;
     }
 
     @Override
-    public String toString() {
-        return "--------------------------------------\n" +
-                " Categoría: Ruta Gastronómica\n" +
-                "--------------------------------------\n" +
-                "Nombre del servicio : " + getNombre() + "\n" +
-                "Duración estimada   : " + getDuracionHoras() + " horas\n" +
-                "Número de paradas   : " + numeroDeParadas + "\n" +
-                "Descripción     	: Ruta enfocada en experiencias culinarias locales.\n" +
-                "--------------------------------------";
-
+    public void mostrarInformacion() {
+        System.out.println("🍽 Ruta Gastronómica: " + getNombre() +
+                " | Precio: $" + getPrecio() +
+                " | Especialidad: " + especialidad);
     }
 }
